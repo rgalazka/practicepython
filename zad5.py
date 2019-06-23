@@ -13,6 +13,7 @@ list2 = [j for j in a if j in b and j not in list2]
 print(list2)
 
 #---------------------------------------------------
+
 from random import randint as rnd
 
 nmb = int(input('Podaj liczbe: '))
