@@ -26,14 +26,10 @@ while stat != 'k':
     rnd_var = rnd(0, 2)
 
     if usr_var == 0 and rnd_var == 1 or usr_var == 1 and rnd_var == 2 or usr_var == 2 and rnd_var == 0:
-        print(f'''
-        WYGRAŁEŚ
-        Komputer - {MZ[rnd_var]} 
-           Gracz - {MZ[usr_var]}
-        ''')
+        print(f' !!! WYGRAŁEŚ Komp:{MZ[rnd_var]} -  Gracz:{MZ[usr_var]}')
     elif usr_var == rnd_var:
-        print('Remis')
+        print(f'REMIS Komp:{MZ[rnd_var]} - Gracz:{MZ[usr_var]}')
     else:
-        print('Przegrałeś')
+        print(f'PRZEGRAŁEŚ Komp:{MZ[rnd_var]} - Gracz:{MZ[usr_var]}')
 
     stat = input('Gramy ? (k-koniec):')
