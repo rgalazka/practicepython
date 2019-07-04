@@ -30,6 +30,6 @@ while (True):
         print(f'!!! Wygrałeś {name} !!!!')
         break
     if j == ILERAZY:
-        print(f'PRZEGRAŁEŚ {name} - Przekroczona liczba prób !!!')
+        print(f'PRZEGRAŁEŚ {name} - Przekroczona liczba prób !!!\n poprawne słowo to: {wrd}')
         break
     j += 1
