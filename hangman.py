@@ -25,7 +25,8 @@ while (True):
         if wrd[k] == sng:
             buffwrd[k] = sng
         k += 1
-    print(buffwrd)
+    print(str(buffwrd).strip("\'"))
+
     if '-' not in buffwrd:
         print(f'!!! Wygrałeś {name} !!!!')
         break
