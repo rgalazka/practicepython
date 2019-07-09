@@ -1,15 +1,29 @@
+"""
+Wypisuje artykuły z pierwszej strony nytimes razem z linkami do nich
++ zapis do .csv
+"""
+
 import requests
 from bs4 import BeautifulSoup
+import csv
 
 url = 'https://www.nytimes.com/'
+
+csv_file = open("csv_file.csv", 'w')
+csv_writer = csv.writer((csv_file))
+csv_writer.writerow(['Tytuł:', 'Link:'])
+
 r = requests.get(url)
 r_html = r.text
-title=[]
 soup = BeautifulSoup(r_html, "html.parser")
-#title = soup.find('h2')
-for i in soup:
-    title.append(soup.find('h2'))
-#    title.append(soup.title.string)
 
-print(title)
-#print(r_html[100000:200000])
+i = 1
+for wiersz in soup.find_all('article'):
+    title = wiersz.h2.string
+    link = 'https://www.nytimes.com' + wiersz.a.get('href')
+    print(i, ') ', title, link)
+    i += 1
+    # link = wiersz.find('a')['href']
+    # print(link)
+    csv_writer.writerow([title, link])
+csv_file.close()
