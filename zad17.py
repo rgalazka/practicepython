@@ -9,8 +9,8 @@ import csv
 
 url = 'https://www.nytimes.com/'
 
-csv_file = open("csv_file.csv", 'w')
-csv_writer = csv.writer((csv_file))
+csv_file = open("csv_file2.csv", 'w')
+csv_writer = csv.writer(csv_file)
 csv_writer.writerow(['Tytuł:', 'Link:'])
 
 r = requests.get(url)
